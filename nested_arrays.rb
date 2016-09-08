@@ -22,12 +22,23 @@ data_table = [ 	["Number", "Name", "Position", "Points per game"],
 
 def create_board()
 	board = []
+	temp = []
+	pattern = ["Rook", "Knight", "Bishop", "Queen", "King", "Bishop", "Knight", "Rook", "Pawn"]
 	row = 8 #boxes downwards
  	columns = 8  #boxes horizontal
+ 	x = 0
 
- 	for i in 0..row
- 		#puts "hello"
+ 	for i in 0..(row-1) 
+ 		for j in 0..(row-1)
+ 			if i == 0 #row 1
+ 				board << ("W " + pattern[x])
+ 				x += 1
+ 			elsif i == 1 #row 2
+ 				board << ("W " + pattern[pattern.length - 1]).to_a
+ 			end	
+ 		end
  	end
+ 	p board
 #do later
 end	
 
